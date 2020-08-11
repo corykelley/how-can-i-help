@@ -19,11 +19,8 @@ const offersController = {
       time_offered: req.body.time_offered,
     })
       .save()
-      .then(offer => {
-        res.json({
-          message: 'ok',
-          offer,
-        });
+      .then(() => {
+        res.redirect('/offers');
       })
       .catch(next);
   },
