@@ -1,5 +1,5 @@
 require('dotenv').config;
-const DB_NAME = process.env.DB_NAME || 'offers';
+const DB_NAME = process.env.DB_NAME || 'how_can_i_help';
 
 const options = {
   query: e => {
