@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 
 const offersRouter = require('./routes/offers-router');
 
@@ -9,11 +10,16 @@ require('dotenv').config();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
+
+app.set('views', 'views');
+app.set('view engine', 'ejs');
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-app.get('/', (req, res) => res.send('You did it!'));
+app.get('/', (req, res) => res.render('index'));
 
 app.use('/offers', offersRouter);
 

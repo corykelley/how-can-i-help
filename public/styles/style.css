@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
+:root {
+  --main-bg-color: #cbe6df;
+  --secondary-color: #e4602b;
+  --accent-gray: #cfcfcf;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  color: #333;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Login Page */
+.login-contain {
+  width: 70vw;
+  max-width: 600px;
+  margin: 13rem auto;
+}
+
+.top-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.top-form h2 {
+  font-size: 2.2rem;
+}
+
+.link {
+  color: var(--secondary-color);
+}
+
+.link:hover {
+  color: #333;
+}
+
+.sign-in {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in input {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--accent-gray);
+  min-height: 35px;
+}
+
+.button-style {
+  background: none;
+  border-radius: 4px;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--accent-gray);
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+  color: #333;
+  font-size: 1rem;
+  transition: all ease 200ms;
+}
+
+.button-style:hover {
+  -webkit-box-shadow: 7px 7px 10px -6px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 7px 7px 10px -6px rgba(0, 0, 0, 0.42);
+  box-shadow: 7px 7px 10px -6px rgba(0, 0, 0, 0.42);
+}
+
+/* Nav Bar */
+.nav-contain {
+  width: 100vw;
+  background-color: var(--main-bg-color);
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* .logo {
+} */
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+/* All Offers Main Page */
+.main-contain {
+  width: 80vw;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0.5rem;
+  background-color: lavender;
+}

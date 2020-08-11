@@ -4,8 +4,7 @@ const offersController = {
   index(req, res, next) {
     Offer.getAll()
       .then(offers => {
-        res.json({
-          message: 'ok',
+        res.render('offers/index', {
           offers,
         });
       })
