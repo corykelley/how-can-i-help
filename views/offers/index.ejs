@@ -1,4 +1,27 @@
 <%- include('../partials/start') %>
-<h1>something</h1>
+
+<div class="offers-flex">
+  <% offers.forEach(offer => { %>
+  <div class="offer">
+    <div class="offer-top">
+      <h2><%= offer.title %></h2>
+      <p><%= offer.category %></p>
+    </div>
+    <div class="offer-description">
+      <p class="offer-user"><b>Some Random User</b></p>
+      <p><%= offer.description %></p>
+    </div>
+    <div class="offer-bottom">
+      <p class="time-offered">
+        <b>Time Offered: </b><%= offer.time_offered %> hours
+      </p>
+      <div class="offer-btns">
+        <button class="button-style">Offer Info</button>
+        <button class="button-style">User Info</button>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
 
 <%- include('../partials/end') %>
