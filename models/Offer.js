@@ -21,7 +21,20 @@ class Offer {
       });
   }
 
-  // static getById(id) {}
+  static getById(id) {
+    return db
+      .oneOrNone(
+        `
+        SELECT * FROM offers
+        WHERE id = $1;
+      `,
+        id
+      )
+      .then(offer => {
+        if (offer) return new this(offer);
+        else throw new Error('No offer found');
+      });
+  }
 
   save() {
     return db
