@@ -39,6 +39,29 @@ const offersController = {
       })
       .catch(next);
   },
+
+  update(req, res, next) {
+    Offer.getById(req.params.id)
+      .then(foundOffer => {
+        return foundOffer.update({
+          title: req.body.title,
+          category: req.body.category,
+          description: req.body.description,
+          time_offered: req.body.time_offered,
+        });
+      })
+      .then(updatedOffer => {
+        res.redirect(`/offers/${updatedOffer.id}`);
+      })
+      .catch(next);
+  },
+
+  delete(req, res, next) {
+    Offer.getById(req.params.id)
+      .then(foundOffer => foundOffer.delete())
+      .then(() => res.redirect('/offers'))
+      .catch(next);
+  },
 };
 
 module.exports = offersController;

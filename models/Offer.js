@@ -50,6 +50,28 @@ class Offer {
       )
       .then(offer => Object.assign(this, offer));
   }
+
+  update(changes) {
+    Object.assign(this, changes);
+    return db
+      .one(
+        `
+      UPDATE offers SET
+      title = $/title/,
+      category = $/category/,
+      description = $/description/,
+      time_offered = $/time_offered/
+      WHERE id = $/id/
+      RETURNING *
+    `,
+        this
+      )
+      .then(offer => Object.assign(this, offer));
+  }
+
+  delete() {
+    return db.none('DELETE FROM offers WHERE id = $1', this.id);
+  }
 }
 
 module.exports = Offer;
