@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 
+const offersRouter = require('./routes/offers-router');
+
 const app = express();
 require('dotenv').config();
 
@@ -12,6 +14,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 app.get('/', (req, res) => res.send('You did it!'));
+
+app.use('/offers', offersRouter);
 
 app.use('*', (req, res) => {
   res.status(404).send('Not found!');
