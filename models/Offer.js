@@ -11,23 +11,25 @@ class Offer {
   }
 
   static getAll() {
-    return db
-      .manyOrNone(
-        `
-      SELECT * FROM offers;
+    return db.manyOrNone(
+      `
+      SELECT * FROM offers
+      JOIN users ON offers.user_id = users.id;
     `
-      )
-      .then(offers => {
-        return offers.map(offer => new this(offer));
-      });
+    );
+    // .then(offers => {
+    //   return offers.map(offer => new this(offer));
+    // });
   }
 
   static getById(id) {
     return db
       .oneOrNone(
         `
-        SELECT * FROM offers
-        WHERE id = $1;
+        SELECT * FROM offers 
+        JOIN users 
+        ON offers.user_id = users.id 
+        WHERE offers.id = $1;
       `,
         id
       )

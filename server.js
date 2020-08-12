@@ -13,7 +13,7 @@ const app = express();
 require('dotenv').config();
 
 //Middleware
-app.use(morgan('dev'));
+app.use(morgan('common'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));

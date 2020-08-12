@@ -9,14 +9,14 @@ authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
 authRouter.post(
   '/login',
   passport.authenticate('local', {
-    successRedirect: '/user',
+    successRedirect: '/user/',
     failureRedirect: '/auth/login',
     failureFlash: true,
   })
 );
 authRouter.get('/logout', (req, res) => {
   req.logOut();
-  res.redirect('back');
+  res.redirect('/');
 });
 
 module.exports = authRouter;

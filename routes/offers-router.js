@@ -11,6 +11,7 @@ offersRouter.get('/new', (req, res) => {
 offersRouter.get('/:id([0-9]+)', offersController.show, (req, res) => {
   res.render('offers/show', {
     offer: res.locals.offer,
+    user: req.user,
   });
 });
 offersRouter.put(

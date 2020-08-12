@@ -6,12 +6,9 @@ const usersController = {
     req.user
       .findUserOffers()
       .then(offers => {
-        res.json({
-          message: 'Put a user profile on this route',
-          data: {
-            user: req.user,
-            offers,
-          },
+        res.render('users/index', {
+          offers,
+          user: req.user,
         });
       })
       .catch(next);
@@ -31,6 +28,15 @@ const usersController = {
           if (err) return next(err);
           res.redirect('/user');
         });
+      })
+      .catch(next);
+  },
+
+  show(req, res, next) {
+    User.getById(req.params.id)
+      .then(user => {
+        res.locals.user = user;
+        next();
       })
       .catch(next);
   },
