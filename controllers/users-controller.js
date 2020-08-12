@@ -31,15 +31,6 @@ const usersController = {
       })
       .catch(next);
   },
-
-  show(req, res, next) {
-    User.getById(req.params.id)
-      .then(user => {
-        res.locals.user = user;
-        next();
-      })
-      .catch(next);
-  },
 };
 
 module.exports = usersController;
