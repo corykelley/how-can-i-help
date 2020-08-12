@@ -6,7 +6,7 @@
     <p><%= offer.category %></p>
   </div>
   <div class="offer-description">
-    <p class="offer-user"><b><%= offer.user.username %></b></p>
+    <p class="offer-user"><b><%= offer.username %></b></p>
     <p><%= offer.description %></p>
   </div>
   <div class="offer-bottom">
@@ -16,15 +16,9 @@
   </div>
 </div>
 <div class="offer-btns">
-  <a href="/offers/<%= offer.id %>" <a href="#" class="button-style"
-    >Accept Offer</a
-  >
-  <a href="/offers/<%= offer.id %>" <a href="#" class="button-style"
-    >User Info</a
-  >
-  <a href="/offers/<%= offer.id %>" <a href="#" class="button-style"
-    >Leave Feedback</a
-  >
+  <a href="#" class="button-style">Accept Offer</a>
+  <a href="#" class="button-style">User Info</a>
+  <a href="#" class="button-style">Leave Feedback</a>
 </div>
 
 <%- include('../partials/end') %>

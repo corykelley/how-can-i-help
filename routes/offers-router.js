@@ -4,7 +4,7 @@ const authHelpers = require('../utils/auth/auth-helpers');
 
 offersRouter.get('/', offersController.index);
 offersRouter.post('/', authHelpers.loginRequired, offersController.create);
-offersRouter.get('/new', (req, res) => {
+offersRouter.get('/new', authHelpers.loginRequired, (req, res) => {
   res.render('offers/new');
 });
 

@@ -13,8 +13,8 @@ class Offer {
   static getAll() {
     return db.manyOrNone(
       `
-      SELECT * FROM offers
-      JOIN users ON offers.user_id = users.id;
+      SELECT * FROM users
+      JOIN offers ON users.id = offers.user_id;
     `
     );
     // .then(offers => {
@@ -26,10 +26,7 @@ class Offer {
     return db
       .oneOrNone(
         `
-        SELECT * FROM offers 
-        JOIN users 
-        ON offers.user_id = users.id 
-        WHERE offers.id = $1;
+        SELECT * FROM offers WHERE id = $1
       `,
         id
       )
