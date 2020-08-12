@@ -31,6 +31,13 @@ textarea {
   font-family: inherit;
 }
 
+input[type='submit'].link {
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+  background: none;
+}
+
 /* Login Page */
 .login-contain {
   width: 70vw;
@@ -46,7 +53,16 @@ textarea {
   margin-bottom: 1rem;
 }
 
-.top-form h2 {
+.create-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.top-form h2,
+.create-header h2 {
   font-size: 2.2rem;
 }
 

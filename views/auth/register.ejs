@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <title>How Can I Help?</title>
+  </head>
+  <body>
+    <div class="login-contain">
+      <div class="create-header">
+        <h2>Create an account</h2>
+      </div>
+      <form class="sign-in" method="POST" action="/user">
+        <input class="input-style type="text" placeholder="Email" name="email"
+        required /> <input class="input-style type="text" placeholder="Username"
+        name="username" required /> <input class="input-style type="password"
+        placeholder="Password (8 characters min)" name="password" minlength="8"
+        required />
+        <input class="button-style" type="submit" value="Create Account" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -7,6 +7,7 @@ class Offer {
     this.category = offer.category;
     this.description = offer.description;
     this.time_offered = offer.time_offered;
+    this.user_id = offer.user_id;
   }
 
   static getAll() {
