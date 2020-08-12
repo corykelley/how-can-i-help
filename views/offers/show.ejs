@@ -1,0 +1,30 @@
+<%- include('../partials/start') %>
+
+<div class="offer-contain">
+  <div class="offer-top">
+    <h2><%= offer.title %></h2>
+    <p><%= offer.category %></p>
+  </div>
+  <div class="offer-description">
+    <p class="offer-user"><b>Some Random User</b></p>
+    <p><%= offer.description %></p>
+  </div>
+  <div class="offer-bottom">
+    <p class="time-offered">
+      <b>Time Offered: </b><%= offer.time_offered %> hours
+    </p>
+  </div>
+</div>
+<div class="offer-btns">
+  <a href="/offers/<%= offer.id %>" <a href="#" class="button-style"
+    >Accept Offer</a
+  >
+  <a href="/offers/<%= offer.id %>" <a href="#" class="button-style"
+    >User Info</a
+  >
+  <a href="/offers/<%= offer.id %>" <a href="#" class="button-style"
+    >Leave Feedback</a
+  >
+</div>
+
+<%- include('../partials/end') %>

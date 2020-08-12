@@ -7,7 +7,11 @@ offersRouter.get('/new', (req, res) => {
   res.render('offers/new');
 });
 
-offersRouter.get('/:id([0-9]+)', offersController.show);
+offersRouter.get('/:id([0-9]+)', offersController.show, (req, res) => {
+  res.render('offers/show', {
+    offer: res.locals.offer,
+  });
+});
 offersRouter.put('/:id([0-9]+)', offersController.update);
 offersRouter.delete('/:id([0-9]+)', offersController.delete);
 

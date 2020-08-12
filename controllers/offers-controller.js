@@ -28,10 +28,8 @@ const offersController = {
   show(req, res, next) {
     Offer.getById(req.params.id)
       .then(offer => {
-        res.json({
-          message: 'ok',
-          offer,
-        });
+        res.locals.offer = offer;
+        next();
       })
       .catch(next);
   },

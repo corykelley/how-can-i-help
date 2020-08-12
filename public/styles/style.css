@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
-  --main-bg-color: #cbe6df;
-  --secondary-color: #e4602b;
+  --main-bg-color: #fd5f59;
   --accent-gray: #cfcfcf;
   --accent-white: #ffffffef;
 }
@@ -14,7 +13,7 @@
 }
 
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #333;
   background-color: var(--accent-white);
 }
@@ -52,11 +51,11 @@ textarea {
 }
 
 .link {
-  color: var(--secondary-color);
+  color: inherit;
 }
 
 .link:hover {
-  color: #333;
+  color: var(--main-bg-color);
 }
 
 .sign-in {
@@ -74,13 +73,11 @@ textarea {
 
 .button-style {
   background: none;
-  border-radius: 4px;
   padding: 0.3rem 1rem;
   background-color: var(--main-bg-color);
   cursor: pointer;
-  color: #333;
+  color: var(--accent-white);
   font-size: 1rem;
-  transition: all ease 200ms;
   border: none !important;
 }
 
@@ -94,20 +91,19 @@ textarea {
 /* Nav Bar */
 .nav-contain {
   width: 100vw;
-  background-color: var(--main-bg-color);
-  padding: 1rem 3rem;
+  padding: 2rem 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--accent-gray);
 }
 
 .add-btn {
   background: none;
-  border-radius: 4px;
   padding: 0.3rem 1rem;
-  border: 1px solid var(--accent-gray);
-  background-color: var(--secondary-color);
+  background-color: var(--main-bg-color);
   cursor: pointer;
   color: var(--accent-white);
 }
@@ -122,7 +118,7 @@ textarea {
 }
 
 .nav-links li {
-  margin-left: 1.5rem;
+  margin-left: 2.3rem;
 }
 
 /* All Offers Main Page */
@@ -144,6 +140,7 @@ textarea {
 .offer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: 0.5rem;
   border: 1px solid var(--accent-gray);
   padding: 0.5rem;
@@ -155,8 +152,9 @@ textarea {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.7rem;
   border-bottom: 1px solid var(--accent-gray);
+  padding-bottom: 0.4rem;
 }
 
 .offer-user {
@@ -185,7 +183,7 @@ textarea {
   align-items: flex-end;
 }
 
-.offer-btns button {
+.offer-btns a {
   margin-left: 0.5rem;
 }
 
@@ -210,4 +208,14 @@ textarea {
 
 .email-policy p {
   margin-left: 0.3rem;
+}
+
+/* Offer Show */
+.offer-contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem;
+  border: 1px solid var(--accent-gray);
+  padding: 0.5rem;
 }
