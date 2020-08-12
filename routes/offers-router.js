@@ -1,8 +1,9 @@
 const offersController = require('../controllers/offers-controller');
 const offersRouter = require('express').Router();
+const authHelpers = require('../utils/auth/auth-helpers');
 
 offersRouter.get('/', offersController.index);
-offersRouter.post('/', offersController.create);
+offersRouter.post('/', authHelpers.loginRequired, offersController.create);
 offersRouter.get('/new', (req, res) => {
   res.render('offers/new');
 });
@@ -12,7 +13,15 @@ offersRouter.get('/:id([0-9]+)', offersController.show, (req, res) => {
     offer: res.locals.offer,
   });
 });
-offersRouter.put('/:id([0-9]+)', offersController.update);
-offersRouter.delete('/:id([0-9]+)', offersController.delete);
+offersRouter.put(
+  '/:id([0-9]+)',
+  authHelpers.loginRequired,
+  offersController.update
+);
+offersRouter.delete(
+  '/:id([0-9]+)',
+  authHelpers.loginRequired,
+  offersController.delete
+);
 
 module.exports = offersRouter;

@@ -1,4 +1,5 @@
 const db = require('../db/config');
+const Offer = require('../models/Offer');
 
 class User {
   constructor({ id, username, email, password_digest }) {
@@ -35,6 +36,14 @@ class User {
         this
       )
       .then(savedUser => Object.assign(this, savedUser));
+  }
+
+  findUserOffers() {
+    return db
+      .manyOrNone('SELECT * FROM offers WHERE user_id = $1', this.id)
+      .then(offers => {
+        return offers.map(offer => new Offer(offer));
+      });
   }
 }
 

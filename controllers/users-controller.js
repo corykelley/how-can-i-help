@@ -3,12 +3,18 @@ const User = require('../models/User');
 
 const usersController = {
   index(req, res, next) {
-    res.json({
-      message: 'Put user profile here',
-      data: {
-        user: req.user,
-      },
-    });
+    req.user
+      .findUserOffers()
+      .then(offers => {
+        res.json({
+          message: 'Put a user profile on this route',
+          data: {
+            user: req.user,
+            offers,
+          },
+        });
+      })
+      .catch(next);
   },
 
   create(req, res, next) {

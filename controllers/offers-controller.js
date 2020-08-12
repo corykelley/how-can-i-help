@@ -17,6 +17,7 @@ const offersController = {
       category: req.body.category,
       description: req.body.description,
       time_offered: req.body.time_offered,
+      user_id: req.user.id,
     })
       .save()
       .then(() => {

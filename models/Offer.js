@@ -41,9 +41,9 @@ class Offer {
       .one(
         `
       INSERT INTO offers
-      (title, category, description, time_offered)
+      (title, category, description, time_offered, user_id)
       VALUES
-      ($/title/, $/category/, $/description/, $/time_offered/)
+      ($/title/, $/category/, $/description/, $/time_offered/, $/user_id/)
       RETURNING *
     `,
         this
