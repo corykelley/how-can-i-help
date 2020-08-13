@@ -1,13 +1,13 @@
 <%- include('../partials/start') %>
 
-<form method="POST" action="/offers">
+<form method="POST" action="/offers/<%= id %>?_method=PUT">
   <div class="offer-form">
     <p class="input-label">Title:</p>
     <input
       class="input-style"
       type="text"
       name="title"
-      placeholder="A few words that describe your offer"
+      value="<%= offer.title %>"
       required
     />
     <p class="input-label">Category:</p>
@@ -19,30 +19,20 @@
       <option value="Express">Express</option>
     </select>
     <p class="input-label">Description:</p>
-    <textarea
-      class="input-style"
-      name="description"
-      placeholder="Tell us in detail how you can help!"
-      required
-    ></textarea>
+    <textarea class="input-style" name="description" required>
+<%= offer.description %></textarea
+    >
     <p class="input-label">Time offered (in hours):</p>
     <input
       class="input-style"
       type="number"
       name="time_offered"
       min="1"
-      value="1"
+      value="<%= offer.time_offered %>"
       required
     />
-    <div class="email-policy">
-      <input type="checkbox" required />
-      <p>
-        By submitting this form, you agree to share your email address with
-        others.
-      </p>
-    </div>
   </div>
-  <input class="button-style" type="submit" value="Add your offer" />
+  <input class="button-style" type="submit" value="Update your offer" />
 </form>
 
 <%- include('../partials/end') %>

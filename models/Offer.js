@@ -16,12 +16,10 @@ class Offer {
     return db.manyOrNone(
       `
       SELECT * FROM users
-      JOIN offers ON users.id = offers.user_id;
+      JOIN offers ON users.id = offers.user_id
+      ORDER by id ASC;
     `
     );
-    // .then(offers => {
-    //   return offers.map(offer => new this(offer));
-    // });
   }
 
   static getById(id) {
@@ -30,7 +28,7 @@ class Offer {
         `
         SELECT * FROM offers 
         JOIN users ON offers.user_id = users.id
-        WHERE offers.id = $1
+        WHERE offers.id = $1;
       `,
         id
       )
@@ -48,7 +46,7 @@ class Offer {
       (title, category, description, time_offered, user_id)
       VALUES
       ($/title/, $/category/, $/description/, $/time_offered/, $/user_id/)
-      RETURNING *
+      RETURNING *;
     `,
         this
       )
@@ -66,7 +64,7 @@ class Offer {
       description = $/description/,
       time_offered = $/time_offered/
       WHERE id = $/id/
-      RETURNING *
+      RETURNING *;
     `,
         this
       )
@@ -74,7 +72,7 @@ class Offer {
   }
 
   delete() {
-    return db.none('DELETE FROM offers WHERE id = $1', this.id);
+    return db.none('DELETE FROM offers WHERE id = $1;', this.id);
   }
 }
 

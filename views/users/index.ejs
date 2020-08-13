@@ -1,27 +1,17 @@
 <%- include('../partials/start') %>
 <div class="profile-contain">
   <h1>Welcome <%= user.username %>!</h1>
-  <% if (offers.length > 1) { %>
-  <h2>
-    You currently have <%= offers.length %> items you're offering to help others
-    with.
-  </h2>
-  <p>Doesn't it feel nice to help others? 😉</p>
-  <% } else if (offers.length == 1) { %>
-  <h2>
-    You currently have <%= offers.length %> item you're offering to help others
-    with.
-  </h2>
-  <p>Doesn't it feel nice to help others? 😉</p>
-  <% } else { %>
-  <h2>
-    You're not currently offering help with any items, add an offer to help
-    someone out!
-  </h2>
-  <div class="profile-add-contain">
-    <a class="add-btn" href="/offers/new">Add An Offer</a>
+  <div class="dashboard">
+    <div class="dashboard-top">
+      <div class="offer-count">
+        <h3>Your offers:</h3>
+        <h1><%= offers.length %></h1>
+      </div>
+    </div>
+    <div class="profile-btns">
+      <a class="add-btn" href="/offers/new">Add An Offer</a>
+    </div>
   </div>
-  <% } %>
 </div>
 <div class="offers-flex">
   <% offers.forEach(offer => { %>
@@ -38,6 +28,7 @@
       <p class="time-offered">
         <b>Time Offered: </b><%= offer.time_offered %> hours
       </p>
+      <a href="/offers/<%= offer.id %>/edit" class="button-style">Edit Offer</a>
       <form action="/offers/<%= offer.id %>?_method=DELETE" method="POST">
         <input type="submit" class="button-style" value="Delete Offer" />
       </form>

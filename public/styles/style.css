@@ -89,12 +89,13 @@ input[type='submit'].link {
 
 .button-style {
   background: none;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   background-color: var(--main-bg-color);
   cursor: pointer;
   color: var(--accent-white);
   font-size: 1rem;
   border: none !important;
+  font-family: 'Poppins', sans-serif;
 }
 
 .button-style:hover,
@@ -241,8 +242,22 @@ input[type='submit'].link {
   padding-left: 0.5rem;
 }
 
-.profile-add-contain {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
+.dashboard {
+  border: 1px solid var(--accent-gray);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-top {
+  display: flex;
+  flex-direction: row;
+}
+
+.offer-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

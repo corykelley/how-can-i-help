@@ -14,6 +14,12 @@ offersRouter.get('/:id([0-9]+)', offersController.show, (req, res) => {
     user: req.user,
   });
 });
+offersRouter.get('/:id([0-9]+)/edit', offersController.show, (req, res) => {
+  res.render('offers/edit', {
+    offers: res.locals.offer,
+    id: req.params.id,
+  });
+});
 offersRouter.put(
   '/:id([0-9]+)',
   authHelpers.loginRequired,

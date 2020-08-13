@@ -14,6 +14,7 @@ class User {
       .oneOrNone(
         `
       SELECT * FROM users WHERE username = $1
+      ORDER BY id ASC;
     `,
         username
       )
@@ -31,7 +32,7 @@ class User {
       (username, email, password_digest)
       VALUES
       ($/username/, $/email/, $/password_digest/)
-      RETURNING *
+      RETURNING *;
     `,
         this
       )
@@ -40,7 +41,7 @@ class User {
 
   findUserOffers() {
     return db
-      .manyOrNone('SELECT * FROM offers WHERE user_id = $1', this.id)
+      .manyOrNone('SELECT * FROM offers WHERE user_id = $1;', this.id)
       .then(offers => {
         return offers.map(offer => new Offer(offer));
       });

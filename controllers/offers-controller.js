@@ -39,14 +39,15 @@ const offersController = {
     Offer.getById(req.params.id)
       .then(foundOffer => {
         return foundOffer.update({
+          id: req.params.id,
           title: req.body.title,
           category: req.body.category,
           description: req.body.description,
           time_offered: req.body.time_offered,
         });
       })
-      .then(updatedOffer => {
-        res.redirect(`/offers/${updatedOffer.id}`);
+      .then(() => {
+        res.redirect(`/user`);
       })
       .catch(next);
   },
