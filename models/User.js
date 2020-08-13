@@ -61,7 +61,7 @@ class User {
   }
 
   delete() {
-    return db.none('DELETE FROM users WHERE id = $1 CASCADE;', this.id);
+    return db.none('DELETE FROM users WHERE id = $1;', this.id);
   }
 }
 
