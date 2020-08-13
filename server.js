@@ -8,6 +8,7 @@ const passport = require('passport');
 const offersRouter = require('./routes/offers-router');
 const authRouter = require('./routes/auth-routes');
 const userRouter = require('./routes/user-routes');
+const { getLinksList } = require('./utils/api-helpers');
 
 const app = express();
 require('dotenv').config();
@@ -36,8 +37,17 @@ app.use(express.static('public'));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
-app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => {
+  res.render('index', {
+    user: res.locals.user,
+  });
+});
 app.get('/about', (req, res) => res.render('about'));
+app.get('/search', getLinksList, (req, res) =>
+  res.render('search', {
+    data: res.locals.data,
+  })
+);
 
 app.use('/offers', offersRouter);
 app.use('/auth', authRouter);

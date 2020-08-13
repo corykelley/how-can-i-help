@@ -1,0 +1,14 @@
+<%- include('./partials/start') %>
+
+<div class="search-results">
+  <ul>
+    <% data.forEach(item => { %>
+    <li>
+      <p><%= item.title %></p>
+      <a href="<%= item.link %>"><%= item.link %></a>
+    </li>
+    <% }) %>
+  </ul>
+</div>
+
+<%- include('./partials/end') %>
