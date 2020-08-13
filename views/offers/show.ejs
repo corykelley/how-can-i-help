@@ -16,7 +16,11 @@
   </div>
 </div>
 <div class="offer-btns">
-  <a href="#" class="button-style">Accept Offer</a>
+  <a
+    href="mailto: <%= offer.email %>?subject=Accepting your offer&body=Hi <%= offer.username %>, I'd like to accept your offer of <%= offer.title %>!"
+    class="button-style"
+    >Accept Offer</a
+  >
   <a href="#" class="button-style">User Info</a>
   <a href="#" class="button-style">Leave Feedback</a>
 </div>

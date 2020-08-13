@@ -8,6 +8,8 @@ class Offer {
     this.description = offer.description;
     this.time_offered = offer.time_offered;
     this.user_id = offer.user_id;
+    this.username = offer.username;
+    this.email = offer.email;
   }
 
   static getAll() {
@@ -26,7 +28,9 @@ class Offer {
     return db
       .oneOrNone(
         `
-        SELECT * FROM offers WHERE id = $1
+        SELECT * FROM offers 
+        JOIN users ON offers.user_id = users.id
+        WHERE offers.id = $1
       `,
         id
       )

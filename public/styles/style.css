@@ -89,7 +89,7 @@ input[type='submit'].link {
 
 .button-style {
   background: none;
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--main-bg-color);
   cursor: pointer;
   color: var(--accent-white);
@@ -234,4 +234,15 @@ input[type='submit'].link {
   margin: 0.5rem;
   border: 1px solid var(--accent-gray);
   padding: 0.5rem;
+}
+
+/* Profile Page */
+.profile-contain {
+  padding-left: 0.5rem;
+}
+
+.profile-add-contain {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
 }

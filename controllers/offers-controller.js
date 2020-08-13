@@ -21,7 +21,7 @@ const offersController = {
     })
       .save()
       .then(() => {
-        res.redirect('/offers');
+        res.redirect('/user');
       })
       .catch(next);
   },
@@ -54,7 +54,7 @@ const offersController = {
   delete(req, res, next) {
     Offer.getById(req.params.id)
       .then(foundOffer => foundOffer.delete())
-      .then(() => res.redirect('/offers'))
+      .then(() => res.redirect('/user'))
       .catch(next);
   },
 };
