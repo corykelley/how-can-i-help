@@ -37,6 +37,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 
 app.get('/', (req, res) => res.render('index'));
+app.get('/about', (req, res) => res.render('about'));
 
 app.use('/offers', offersRouter);
 app.use('/auth', authRouter);

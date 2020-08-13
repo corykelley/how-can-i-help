@@ -68,6 +68,7 @@ input[type='submit'].link {
 
 .link {
   color: inherit;
+  font-family: 'Poppins', sans-serif;
 }
 
 .link:hover {
@@ -142,7 +143,7 @@ input[type='submit'].link {
 .main-contain {
   width: 80vw;
   max-width: 1100px;
-  margin: 2rem auto 0;
+  margin: 4rem auto 0;
   min-height: 90vh;
 }
 

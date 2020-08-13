@@ -16,8 +16,7 @@ class Offer {
     return db.manyOrNone(
       `
       SELECT * FROM users
-      JOIN offers ON users.id = offers.user_id
-      ORDER by id ASC;
+      JOIN offers ON users.id = offers.user_id;
     `
     );
   }
