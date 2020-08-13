@@ -10,6 +10,17 @@
     </div>
     <div class="profile-btns">
       <a class="add-btn" href="/offers/new">Add An Offer</a>
+      <form action="/auth/logout" method="GET">
+        <input type="submit" class="button-style" value="Sign Out" />
+      </form>
+      <form action="/user/<%= user.id %>?_method=DELETE" method="POST">
+        <input
+          type="submit"
+          class="button-style"
+          id="delete"
+          value="Delete Account"
+        />
+      </form>
     </div>
   </div>
 </div>

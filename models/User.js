@@ -13,10 +13,23 @@ class User {
     return db
       .oneOrNone(
         `
-      SELECT * FROM users WHERE username = $1
-      ORDER BY id ASC;
+      SELECT * FROM users WHERE username = $1;
     `,
         username
+      )
+      .then(user => {
+        if (user) return new this(user);
+        else throw new Error('User not found!');
+      });
+  }
+
+  static findById(id) {
+    return db
+      .oneOrNone(
+        `
+      SELECT * FROM users WHERE id = $1;
+    `,
+        id
       )
       .then(user => {
         if (user) return new this(user);
@@ -45,6 +58,10 @@ class User {
       .then(offers => {
         return offers.map(offer => new Offer(offer));
       });
+  }
+
+  delete() {
+    return db.none('DELETE FROM users WHERE id = $1 CASCADE;', this.id);
   }
 }
 

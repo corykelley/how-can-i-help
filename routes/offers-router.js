@@ -8,12 +8,17 @@ offersRouter.get('/new', authHelpers.loginRequired, (req, res) => {
   res.render('offers/new');
 });
 
-offersRouter.get('/:id([0-9]+)', offersController.show, (req, res) => {
-  res.render('offers/show', {
-    offer: res.locals.offer,
-    user: req.user,
-  });
-});
+offersRouter.get(
+  '/:id([0-9]+)',
+  authHelpers.loginRequired,
+  offersController.show,
+  (req, res) => {
+    res.render('offers/show', {
+      offer: res.locals.offer,
+      user: req.user,
+    });
+  }
+);
 offersRouter.get('/:id([0-9]+)/edit', offersController.show, (req, res) => {
   res.render('offers/edit', {
     offers: res.locals.offer,
@@ -25,10 +30,6 @@ offersRouter.put(
   authHelpers.loginRequired,
   offersController.update
 );
-offersRouter.delete(
-  '/:id([0-9]+)',
-  authHelpers.loginRequired,
-  offersController.delete
-);
+offersRouter.delete('/:id([0-9]+)', offersController.delete);
 
 module.exports = offersRouter;

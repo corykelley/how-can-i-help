@@ -262,3 +262,14 @@ input[type='submit'].link {
   align-items: center;
   flex-direction: column;
 }
+
+.profile-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#delete {
+  background-color: rgb(158, 11, 11);
+}

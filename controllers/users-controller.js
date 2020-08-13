@@ -31,6 +31,13 @@ const usersController = {
       })
       .catch(next);
   },
+
+  delete(req, res, next) {
+    User.findById(req.params.id)
+      .then(foundUser => foundUser.delete())
+      .then(() => res.redirect('/'))
+      .catch(next);
+  },
 };
 
 module.exports = usersController;

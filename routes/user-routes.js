@@ -9,4 +9,9 @@ userRouter.get('/new', authHelpers.loginRedirect, (req, res) => {
 userRouter.post('/', usersController.create);
 userRouter.get('/', authHelpers.loginRequired, usersController.index);
 
+userRouter.delete('/:id([0-9]+)', (req, res) => {
+  req.logOut();
+  usersController.delete;
+});
+
 module.exports = userRouter;
