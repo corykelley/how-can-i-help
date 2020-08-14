@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const getLinksList = (req, res, next) => {
   fetch(
-    `https://api.stackexchange.com/2.2/questions?pagesize=5&tagged=inflation&site=economics`
+    `https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&body=${searchParams}&site=stackoverflow`
   )
     .then(res => res.json())
     .then(data => {

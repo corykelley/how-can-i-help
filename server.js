@@ -8,7 +8,7 @@ const passport = require('passport');
 const offersRouter = require('./routes/offers-router');
 const authRouter = require('./routes/auth-routes');
 const userRouter = require('./routes/user-routes');
-const { getLinksList } = require('./utils/api-helpers');
+// const { getLinksList } = require('./utils/api-helpers');
 
 const app = express();
 require('dotenv').config();
@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 app.get('/about', (req, res) => res.render('about'));
-app.get('/search', getLinksList, (req, res) =>
+app.get('/search', (req, res) =>
   res.render('search', {
     data: res.locals.data,
   })
