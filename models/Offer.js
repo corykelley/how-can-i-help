@@ -37,6 +37,17 @@ class Offer {
       });
   }
 
+  static filterByCategory(category) {
+    console.log(category);
+    return db.manyOrNone(
+      `
+        SELECT * FROM offers
+        WHERE category = $1;
+      `,
+      category
+    );
+  }
+
   save() {
     return db
       .one(

@@ -1,11 +1,24 @@
 <%- include('../partials/start') %>
 
+<div class="filter">
+  <form method="GET" action="/offers/filtered">
+    <select class="input-style" id="category" name="category">
+      <option value="ALL">All</option>
+      <option value="CSS">CSS</option>
+      <option value="SQL">SQL</option>
+      <option value="HTML">HTML</option>
+      <option value="Javascript">Javascript</option>
+      <option value="Express">Express</option>
+    </select>
+    <input id="filter-btn" class="button-style" type="submit" value="Filter" />
+  </form>
+</div>
 <div class="offers-flex">
   <% offers.forEach(offer => { %>
   <div class="offer">
     <div class="offer-top">
       <h2><%= offer.title %></h2>
-      <p><%= offer.category %></p>
+      <p id="offer-cat"><%= offer.category %></p>
     </div>
     <div class="offer-description">
       <p class="offer-user"><b><%= offer.username %></b></p>
@@ -23,5 +36,4 @@
   </div>
   <% }) %>
 </div>
-
 <%- include('../partials/end') %>

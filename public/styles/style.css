@@ -151,6 +151,10 @@ input[type='submit'].link {
   margin: 4rem auto 0;
 }
 
+.filter {
+  padding-left: 0.5rem;
+}
+
 /* Individual Offers */
 .offers-flex {
   display: flex;

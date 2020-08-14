@@ -52,6 +52,20 @@ const offersController = {
       .catch(next);
   },
 
+  filter(req, res, next) {
+    if (req.query.category == 'ALL') {
+      res.redirect('/offers');
+    }
+    //REDIRECT TO OFFERS/INDEX
+    Offer.filterByCategory(req.query.category)
+      .then(offers => {
+        res.render('offers/index', {
+          offers,
+        });
+      })
+      .catch(next);
+  },
+
   delete(req, res, next) {
     Offer.getById(req.params.id)
       .then(foundOffer => foundOffer.delete())

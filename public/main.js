@@ -1,3 +1,4 @@
+console.log('js working!');
 // Search API
 const searchInput = document.querySelector('.search-input');
 const searchSubmit = document.getElementById('search-submit');
