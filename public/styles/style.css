@@ -113,7 +113,7 @@ input[type='submit'].link {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   font-size: 1.15rem;
   border-bottom: 1px solid var(--accent-gray);
 }
@@ -126,8 +126,9 @@ input[type='submit'].link {
   color: var(--accent-white);
 }
 
-/* .logo {
-} */
+.logo {
+  width: 150px;
+}
 
 .nav-links {
   display: flex;
@@ -321,4 +322,10 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.3rem;
+}
+
+/* IMAGE */
+img {
+  width: 100%;
+  margin: 0 auto;
 }
