@@ -35,9 +35,11 @@ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  border-radius: 0px;
 }
 
 input[type='submit'].link {
+  border-radius: 0px;
   border: none;
   font-size: inherit;
   cursor: pointer;
