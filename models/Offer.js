@@ -26,8 +26,7 @@ class Offer {
       .oneOrNone(
         `
         SELECT * FROM offers 
-        JOIN users ON offers.user_id = users.id
-        WHERE offers.id = $1;
+        WHERE id = $1;
       `,
         id
       )

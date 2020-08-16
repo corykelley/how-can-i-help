@@ -9,27 +9,33 @@ To help 'bridge the gap' and to help all students succeed, "How Can I Help"
 facilitates the idea of peer tutoring by letting students offer help before
 being asked for it.
 
-## Getting Started
+### **Running locally**
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+1. Clone the following(this) repository
 
 ```
-Give the example
+git clone https://github.com/johncoryk/how-can-i-help.git
 ```
 
-And repeat
+2. Navigate into the repository
 
 ```
-until finished
+cd how-can-i-help
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+3. Install the required dependences
+
+```
+npm install
+```
+
+4. To launch the application locally type the following commands in separate terminals
+
+```
+npm run dev
+```
+
+In the terminal you should see a 'Compiled successfully!' message and the react app will open automatically on `local host:3000`.
 
 ## Built With
 
