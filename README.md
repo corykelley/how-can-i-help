@@ -9,7 +9,7 @@ To help 'bridge the gap' and to help all students succeed, "How Can I Help"
 facilitates the idea of peer tutoring by letting students offer help before
 being asked for it.
 
-### **Running locally**
+## **Running locally**
 
 1. Clone the following(this) repository
 
@@ -27,15 +27,18 @@ cd how-can-i-help
 
 ```
 npm install
+npm i nodemon
 ```
 
-4. To launch the application locally type the following commands in separate terminals
+4. To launch the application locally type the following in your terminal
 
 ```
 npm run dev
 ```
 
-In the terminal you should see a 'Compiled successfully!' message and the react app will open automatically on `local host:3000`.
+## The HOW
+
+Wireframes and notes can be viewed in the 'setup' folder to get an inside look at what prep and flow looked like before and throughout the project. Express/Node/SQL makes up the backend with EJS helping out the views. Custom CSS was used without any framework and the application is fully responsive!
 
 ## Built With
 
@@ -44,3 +47,4 @@ In the terminal you should see a 'Compiled successfully!' message and the react 
 - [Stack Exchange API](https://api.stackexchange.com/) - Stack Exchange API to fetch answers from Stack Overflow.
 - HTML5/CSS
 - Javascript
+- EJS
