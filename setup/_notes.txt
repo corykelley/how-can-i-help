@@ -1,0 +1,62 @@
+USER STORIES:
++ Logged out:
+- I can login OR register.
+- I can look at the 'main page', but I cannot click on any of the offers.
+
++ Logged In:
+- I can look at the 'main page' and sort by subject.
+  - On the main page I can click on any of the offers.
+    - On a single offer page I can either request the offer OR I can look at that user's profile page.
+- I can look at other user's profiles that have info and feedback about them.
+- I can look at my personal profile that has my current offers and my current feedback.
+- I can create a new offer from the 'main page' or from my personal profile.
+- When I create an offer I am notified that my email address will be shared publicly.
+- Once I create an offer I am taken back to the 'main page' OR splash screen with link to 'main page'.
+
+Routes:
++Users:
+
+
++Offers:
+- GET /offers
+- GET /offers/:id
+- POST /offers
+- DELETE /offers/:id
+- GET /offers/:id/edit
+- PUT /offers/:id
+
+Offer Layout:
+- User
+- Category
+- Description
+- Time Offered (Amount of time a user is willing to offer to help. ie 1 or 2 hours)
+
+Colors: 
+- Faded Green: #7E8870
+- Orange: #FE862D
+- Gray: #cfcfcf
+
+Font Ideas:
+- Sora (Sans, Google)
+- Cabin (Sans, Google)
+- Merriweather (Serif, Google)
+
+NPM Install:
+express dotenv ejs method-override morgan pg-promise express-session passport passport-local bcryptjs cookie-parser
+
+Deliverables:
+- A full CRUD app, with create, edit, and delete functionality, hosted on Heroku
+- A public repository on Github.com with your code for this project & a thorough commit history dating back to the beginning of the project
+- A thorough README.md file that contains the following:
+  - The project's name and description
+  - Your wireframes and user stories
+  - The technologies, APIs, and modules you used and a description of each
+  - A code snippet of a part of the app you're particularly proud of
+  - Any things you plan to fix or features you plan to add
+  - Instructions for downloading the code and running it on localhost
+- A presentation in class that:
+  - Is 5 minutes in length
+  - Shows off all features of the app
+  - Explains the technical details
+  - Explains the technical challenges
+  - Explains which improvements you might make

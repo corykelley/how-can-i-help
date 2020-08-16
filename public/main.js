@@ -1,16 +1,28 @@
 console.log('js working!');
 // Search API
-const searchInput = document.querySelector('.search-input');
+const titleInput = document.querySelector('.title-input');
+const bodyInput = document.querySelector('.body-input');
 const searchSubmit = document.getElementById('search-submit');
-const searchContainer = document.querySelector('.search-contain');
+const searchResults = document.querySelector('.search-results');
+
+//Clear all children
+const clearChildren = () => {
+  while (searchResults.firstChild) {
+    searchResults.removeChild(searchResults.lastChild);
+  }
+};
 
 searchSubmit.addEventListener('click', e => {
   e.preventDefault();
-  let value = searchInput.value;
-  value = sParameter = encodeURIComponent(value.trim());
-  console.log(value);
+  clearChildren();
+  let titleValue = titleInput.value;
+  let bodyValue = bodyInput.value;
+  titleValue = sParameter = encodeURIComponent(titleValue.trim());
+  bodyValue = sParameter = encodeURIComponent(bodyValue.trim());
+  console.log(titleValue);
+  console.log(bodyValue);
   fetch(
-    `https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&title=${value}&site=stackoverflow`
+    `https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&body=${bodyValue}&title=${titleValue}&site=stackoverflow`
   )
     .then(res => res.json())
     .then(data => data.items)
@@ -26,7 +38,7 @@ searchSubmit.addEventListener('click', e => {
         searchItem.classList.add('search-item');
         searchItem.append(title);
         searchItem.append(link);
-        searchContainer.append(searchItem);
+        searchResults.append(searchItem);
       });
     })
     .catch(err => {

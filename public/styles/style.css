@@ -36,6 +36,9 @@ input[type='submit'].link {
   font-size: inherit;
   cursor: pointer;
   background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* Login Page */
@@ -255,8 +258,8 @@ input[type='submit'].link {
   border: 1px solid var(--accent-gray);
   padding: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .dashboard-top {
@@ -271,10 +274,18 @@ input[type='submit'].link {
   flex-direction: column;
 }
 
+.offer-count h3 {
+  font-size: 1.3rem;
+}
+
+.offer-count h1 {
+  font-size: 7rem;
+}
+
 .profile-btns {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: baseline;
 }
 
@@ -332,4 +343,72 @@ footer {
 img {
   width: 100%;
   margin: 0 auto;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1290px) {
+  .offer {
+    flex-basis: 475px;
+  }
+}
+
+@media only screen and (max-width: 1015px) {
+  .nav-contain {
+    font-size: 1rem;
+  }
+
+  .nav-links li {
+    margin-left: 1.75rem;
+  }
+
+  .search-contain h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .nav-contain {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .nav-links li {
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 1.3rem;
+  }
+
+  .footer-contain p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .offer-bottom {
+    flex-direction: column;
+  }
+
+  .offer-bottom a,
+  .offer-bottom input {
+    margin-bottom: 0.2rem;
+  }
+
+  .search-contain h1 {
+    font-size: 1.4rem;
+  }
+
+  .search-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-form h2 {
+    font-size: 1.3rem;
+  }
 }
