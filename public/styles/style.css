@@ -31,6 +31,12 @@ textarea {
   font-family: inherit;
 }
 
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 input[type='submit'].link {
   border: none;
   font-size: inherit;
