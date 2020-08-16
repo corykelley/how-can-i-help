@@ -188,6 +188,7 @@ input[type='submit'].link {
 
 .offer-user {
   margin-bottom: 0.3rem;
+  color: var(--main-bg-color);
 }
 
 .offer-description {
