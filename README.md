@@ -9,6 +9,8 @@ To help 'bridge the gap' and to help all students succeed, "How Can I Help"
 facilitates the idea of peer tutoring by letting students offer help before
 being asked for it.
 
+You can check out the full working version here: https://how-can-i-help.herokuapp.com/
+
 ## **Running locally**
 
 1. Clone the following(this) repository
