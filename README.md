@@ -38,7 +38,7 @@ npm run dev
 
 ## The HOW
 
-Wireframes and notes can be viewed in the 'setup' folder to get an inside look at what prep and flow looked like before and throughout the project. Express/Node/SQL makes up the backend with EJS helping out the views. Custom CSS was used without any framework and the application is fully responsive!
+Wireframes and notes can be viewed in the [SETUP](https://github.com/johncoryk/how-can-i-help/tree/main/setup) folder to get an inside look at what prep and flow looked like before and throughout the project. Express/Node/SQL makes up the backend with EJS helping out the views. Custom CSS was used without any framework and the application is fully responsive!
 
 ## Built With
 

@@ -8,7 +8,6 @@ const passport = require('passport');
 const offersRouter = require('./routes/offers-router');
 const authRouter = require('./routes/auth-routes');
 const userRouter = require('./routes/user-routes');
-// const { getLinksList } = require('./utils/api-helpers');
 
 const app = express();
 require('dotenv').config();
