@@ -421,3 +421,8 @@ img {
     font-size: 1.3rem;
   }
 }
+
+.browse {
+  text-align: center !important;
+  margin-top: 0.4rem;
+}
