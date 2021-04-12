@@ -48,5 +48,5 @@ Wireframes and notes can be viewed in the [SETUP](https://github.com/johncoryk/h
 - [PostgreSQL](https://www.postgresql.org/) - Database used.
 - [Stack Exchange API](https://api.stackexchange.com/) - Stack Exchange API to fetch answers from Stack Overflow.
 - HTML5/CSS
-- Javascript
+- JavaScript
 - EJS
