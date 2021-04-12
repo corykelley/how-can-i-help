@@ -7,8 +7,6 @@ const options = {
 	},
 };
 
-pgp.pg.defaults.ssl = true;
-
 const pgp = require('pg-promise')(options);
 
 const setDatabase = () => {
