@@ -23,19 +23,7 @@ const setDatabase = () => {
 			},
 		});
 	} else {
-		return pgp({
-			database: process.env.DATABASE,
-			dialect: 'postgres',
-			dialectOptions: {
-				ssl: {
-					require: true,
-					rejectUnauthorized: false,
-				},
-			},
-			user: process.env.USERNAME,
-			password: process.env.PASSWORD,
-			host: process.env.HOST,
-		});
+		return pgp(process.env.DATABASE_URL);
 	}
 };
 
