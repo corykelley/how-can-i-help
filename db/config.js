@@ -15,9 +15,23 @@ const setDatabase = () => {
 			database: DB_NAME,
 			port: 5432,
 			host: 'localhost',
+			dialectOptions: {
+				ssl: {
+					require: true,
+					refectUnauthorized: false,
+				},
+			},
 		});
 	} else {
-		return pgp(process.env.DATABASE_URL);
+		return pgp({
+			database: process.env.DATABASE_URL,
+			dialectOptions: {
+				ssl: {
+					require: true,
+					refectUnauthorized: false,
+				},
+			},
+		});
 	}
 };
 
