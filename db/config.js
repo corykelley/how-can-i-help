@@ -29,7 +29,7 @@ const setDatabase = () => {
 			dialectOptions: {
 				ssl: {
 					require: true,
-					refectUnauthorized: false,
+					rejectUnauthorized: false,
 				},
 			},
 			user: process.env.USERNAME,
