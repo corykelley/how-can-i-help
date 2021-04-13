@@ -32,7 +32,7 @@ const setDatabase = () => {
 					refectUnauthorized: false,
 				},
 			},
-			username: process.env.USERNAME,
+			user: process.env.USERNAME,
 			password: process.env.PASSWORD,
 			host: process.env.HOST,
 		});
