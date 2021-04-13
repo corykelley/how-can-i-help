@@ -24,8 +24,7 @@ const setDatabase = () => {
 		});
 	} else {
 		return pgp({
-			database: `
-			postgres://etknahgemynvno:c3cb177dc49bd519462bb243846cfda771a014dca025a1344f2b2e2b228433d6@ec2-34-225-167-77.compute-1.amazonaws.com:5432/d2dupo40cdmog8?sslmode=require`,
+			database: process.env.DATABASE_URL,
 			dialect: 'postgres',
 			dialectOptions: {
 				ssl: {
