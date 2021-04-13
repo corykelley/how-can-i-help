@@ -25,12 +25,16 @@ const setDatabase = () => {
 	} else {
 		return pgp({
 			database: process.env.DATABASE_URL,
+			dialect: 'postgres',
 			dialectOptions: {
 				ssl: {
 					require: true,
 					refectUnauthorized: false,
 				},
 			},
+			username: process.env.USERNAME,
+			password: process.env.PASSWORD,
+			host: process.env.HOST,
 		});
 	}
 };
