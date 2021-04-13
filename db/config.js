@@ -24,7 +24,7 @@ const setDatabase = () => {
 		});
 	} else {
 		return pgp({
-			database: process.env.DATABASE_URL,
+			database: process.env.DATABASE,
 			dialect: 'postgres',
 			dialectOptions: {
 				ssl: {
